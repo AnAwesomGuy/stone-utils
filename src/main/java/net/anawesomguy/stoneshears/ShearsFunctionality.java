@@ -1,4 +1,4 @@
-package net.anawesomguy.stoneshears
+package net.anawesomguy.stoneshears;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.item.Items;
