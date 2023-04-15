@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    
+    "stone_shears.mixins.json"
   ],
 
   "depends": {
