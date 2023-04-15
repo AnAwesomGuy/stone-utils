@@ -1,5 +1,8 @@
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.util.Identifier
+import net.minecraft.util.Identifier;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.block.Blocks;
 
 public class ShearsFunctionality {
     private static final Identifier COAL_ORE_LOOT_TABLE_ID = Blocks.COAL_ORE.getLootTableId();
