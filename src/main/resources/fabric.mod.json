@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "stone_shears",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Stone Shears",
+  "description": "Adds a single item; stone shears",
   "authors": [
     "Me!"
   ],
@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.anawesomguy.stoneshears.StoneShears"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    
   ],
 
   "depends": {
