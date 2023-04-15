@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.block.dispenser.ShearsDispenserBehavior;
+import net.minecraft.block.DispenserBlock;
 
 public class StoneShears implements ModInitializer {
  
@@ -19,6 +19,6 @@ public class StoneShears implements ModInitializer {
     }
     
     public static void addDispenserBehaviours() {
-        DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenseItemBehavior());
+        DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
     }
 }
