@@ -3,15 +3,14 @@ package net.fabricmc.example;
 import net.minecraft.item.ShearsItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class ExampleMod {
  
-    public static final Item SHEARS = Items.register("shears", (Item)new ShearsItem(new Item.Settings().maxDamage(238).group(ItemGroup.TOOLS)));
+    public static final Item STONE_SHEARS = new ShearsItem(new Item.Settings().maxDamage(87).group(ItemGroup.TOOLS));
  
     public static void registerItems() {
-        Registry.register(Registries.ITEM, new Identifier("kubejs", "stone_grasscutters"), STONE_SHEARS);
+        Registry.register(Registry.ITEM, new Identifier("kubejs", "stone_shears"), STONE_SHEARS);
     }
 }
