@@ -13,13 +13,19 @@
     "sources": "https://github.com/AnAwesomGuy/stone-shears"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/stone_shears/textures/stone_shears.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "net.anawesomguy.stoneshears.StoneShears"
+    ]
+  },
+  
+  {
+    "mixins": [
+      "stone_shears.mixins.json"
     ]
   },
 
