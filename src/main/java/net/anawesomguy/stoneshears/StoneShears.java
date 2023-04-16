@@ -27,7 +27,6 @@ public class StoneShears implements ModInitializer {
 
     DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
 
-    Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(MOD_ID, "is_using_shears"), new LootConditionType(serializer));
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
       if (source.isBuiltin() && COAL_ORE_LOOT_TABLE_ID.equals(id)) {
         LootPool.Builder poolBuilder = LootPool.builder()
