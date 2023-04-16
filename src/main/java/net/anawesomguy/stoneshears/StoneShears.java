@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.LootPool;
 import net.minecraft.item.Items;
+import net.minecraft.block.Blocks;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.item.ShearsItem;
 import net.minecraft.item.Item;
