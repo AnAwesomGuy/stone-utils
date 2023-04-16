@@ -2,7 +2,7 @@ package net.anawesomguy.stoneshears;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.ShearsItem;
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.rendering.data.v1.RenderAttachmentBlockEntity;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
