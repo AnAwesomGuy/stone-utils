@@ -25,13 +25,15 @@ public class StoneShears implements ModInitializer {
     Registry.register(Registry.ITEM, new Identifier("stone_shears", "stone_shears"), STONE_SHEARS);
 
     DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
-
-    LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-      if (source.isBuiltin() && COAL_ORE_LOOT_TABLE_ID.equals(id)) {
-        LootPool.Builder poolBuilder = LootPool.builder()
-          .with(ItemEntry.builder(STONE_SHEARS));
-        tableBuilder.pool(poolBuilder);
-      }
-    });
+		
+		static {
+			LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+				if (source.isBuiltin() && COAL_ORE_LOOT_TABLE_ID.equals(id)) {
+					LootPool.Builder poolBuilder = LootPool.builder()
+						.with(ItemEntry.builder(STONE_SHEARS));
+					tableBuilder.pool(poolBuilder);
+				}
+			});
+		}
   }
 }
