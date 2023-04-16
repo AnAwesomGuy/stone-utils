@@ -15,21 +15,23 @@ import net.minecraft.block.dispenser.ShearsDispenserBehavior;
 import net.minecraft.block.DispenserBlock;
 
 public class StoneShears implements ModInitializer {
- 
+  public static final String MOD_ID = "headed";
+
   public static final Item STONE_SHEARS = new ShearsItem(new Item.Settings().maxDamage(93).group(ItemGroup.TOOLS));
- 
+
   private static final Identifier COAL_ORE_LOOT_TABLE_ID = Blocks.COAL_ORE.getLootTableId();
- 
+
   @Override
   public void onInitialize() {
-    Registry.register(Registry.ITEM, new Identifier("stone_shears", "stone_shears"), STONE_SHEARS);
+    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stone_shears"), STONE_SHEARS);
 
     DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
 
+    Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(MOD_ID, "is_using_shears"), new LootConditionType(serializer));
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
       if (source.isBuiltin() && COAL_ORE_LOOT_TABLE_ID.equals(id)) {
         LootPool.Builder poolBuilder = LootPool.builder()
-                .with(ItemEntry.builder(STONE_SHEARS));
+          .with(ItemEntry.builder(STONE_SHEARS));
         tableBuilder.pool(poolBuilder);
       }
     });
