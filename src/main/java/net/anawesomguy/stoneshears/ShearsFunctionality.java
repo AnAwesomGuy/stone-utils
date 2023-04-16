@@ -5,6 +5,7 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.anawesomguy.stoneshears.StoneShears;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.util.Identifier;
 
 public class ShearsFunctionality {
   static {
