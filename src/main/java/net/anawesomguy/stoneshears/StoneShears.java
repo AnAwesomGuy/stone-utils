@@ -56,9 +56,6 @@ public class StoneShears implements ModInitializer {
 
         tableBuilder.pool(poolBuilder);
       }
-      if (Blocks.YELLOW_WOOL.getLootTableId().equals(id)) {
-				tableBuilder.modifyPools(poolBuilder -> poolBuilder.with(ItemEntry.builder(Items.EMERALD)));
-			}
     });
   }
 }
