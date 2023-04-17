@@ -29,15 +29,36 @@ public class StoneShears implements ModInitializer {
 
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
       if (source.isBuiltin() && Blocks.GRASS.getLootTableId().equals(id)) {
-        tableBuilder.modifyPools(poolBuilder -> poolBuilder
+        LootPool.Builder poolBuilder = LootPool.builder()
           .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
-          .with(ItemEntry.builder(Items.GRASS)));
-      } 
-      if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id)) {
-        tableBuilder.modifyPools(poolBuilder -> poolBuilder
-          .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
-          .with(ItemEntry.builder(Items.GRASS)));
+          .with(ItemEntry.builder(Items.GRASS));
+
+        tableBuilder.pool(poolBuilder);
       }
+      if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id)) {
+        LootPool.Builder poolBuilder = LootPool.builder()
+          .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
+          .with(ItemEntry.builder(Items.GRASS));
+
+        tableBuilder.pool(poolBuilder);
+      }
+      if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id)) {
+        LootPool.Builder poolBuilder = LootPool.builder()
+          .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
+          .with(ItemEntry.builder(Items.GRASS));
+
+        tableBuilder.pool(poolBuilder);
+      }
+      if (source.isBuiltin() && Blocks.SEAGRASS.getLootTableId().equals(id)) {
+        LootPool.Builder poolBuilder = LootPool.builder()
+          .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
+          .with(ItemEntry.builder(Items.SEAGRASS));
+
+        tableBuilder.pool(poolBuilder);
+      }
+      if (Blocks.YELLOW_WOOL.getLootTableId().equals(id)) {
+				tableBuilder.modifyPools(poolBuilder -> poolBuilder.with(ItemEntry.builder(Items.EMERALD)));
+			}
     });
   }
 }
