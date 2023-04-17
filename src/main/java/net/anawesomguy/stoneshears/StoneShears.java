@@ -32,12 +32,12 @@ public class StoneShears implements ModInitializer {
         tableBuilder.modifyPools(poolBuilder -> poolBuilder
           .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
           .with(ItemEntry.builder(Items.GRASS)));
-			} 
+      } 
       if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id)) {
         tableBuilder.modifyPools(poolBuilder -> poolBuilder
           .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
           .with(ItemEntry.builder(Items.GRASS)));
-			}
+      }
     });
   }
 }
