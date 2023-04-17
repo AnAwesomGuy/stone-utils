@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.LootPool;
 import net.minecraft.item.Items;
 import net.minecraft.block.Blocks;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.item.ShearsItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -15,11 +17,9 @@ import net.minecraft.block.dispenser.ShearsDispenserBehavior;
 import net.minecraft.block.DispenserBlock;
 
 public class StoneShears implements ModInitializer {
-  public static final String MOD_ID = "headed";
+  public static final String MOD_ID = "stone_shears";
 
   public static final Item STONE_SHEARS = new ShearsItem(new Item.Settings().maxDamage(93).group(ItemGroup.TOOLS));
-
-  private static final Identifier COAL_ORE_LOOT_TABLE_ID = Blocks.COAL_ORE.getLootTableId();
 
   @Override
   public void onInitialize() {
@@ -28,11 +28,16 @@ public class StoneShears implements ModInitializer {
     DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
 
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-      if (source.isBuiltin() && COAL_ORE_LOOT_TABLE_ID.equals(id)) {
+      if (source.isBuiltin() && Blocks.COAL_ORE.getLootTableId().equals(id)) {
         LootPool.Builder poolBuilder = LootPool.builder()
           .with(ItemEntry.builder(STONE_SHEARS));
         tableBuilder.pool(poolBuilder);
       }
+      if (source.isBuiltin() && Blocks.GRASS.getLootTableId().equals(id)) {
+				tableBuilder.modifyPools(poolBuilder -> poolBuilder
+          .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
+          .with(ItemEntry.builder(Items.GRASS)));
+			}
     });
   }
 }
