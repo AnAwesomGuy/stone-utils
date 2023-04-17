@@ -28,12 +28,12 @@ public class StoneShears implements ModInitializer {
     DispenserBlock.registerBehavior(STONE_SHEARS, new ShearsDispenserBehavior());
 
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-      if (source.isBuiltin() && Blocks.GRASS.getLootTableId().equals(id))
+      if (source.isBuiltin() && Blocks.GRASS.getLootTableId().equals(id)) {
         tableBuilder.modifyPools(poolBuilder -> poolBuilder
           .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
           .with(ItemEntry.builder(Items.GRASS)));
 			} 
-      if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id))
+      if (source.isBuiltin() && Blocks.TALL_GRASS.getLootTableId().equals(id)) {
         tableBuilder.modifyPools(poolBuilder -> poolBuilder
           .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(STONE_SHEARS)))
           .with(ItemEntry.builder(Items.GRASS)));
