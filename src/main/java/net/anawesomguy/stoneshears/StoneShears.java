@@ -60,6 +60,7 @@ public class StoneShears implements ModInitializer {
           .with(ItemEntry.builder(Items.SEAGRASS));
 
         tableBuilder.pool(poolBuilder);
+        LOGGER.info(lootManager.getTable(id));
       }
     });
   }
