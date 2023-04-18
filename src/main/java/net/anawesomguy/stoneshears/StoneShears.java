@@ -15,8 +15,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.block.dispenser.ShearsDispenserBehavior;
 import net.minecraft.block.DispenserBlock;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class StoneShears implements ModInitializer {
+  
+  public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+  
   public static final String MOD_ID = "stone_shears";
 
   public static final Item STONE_SHEARS = new ShearsItem(new Item.Settings().maxDamage(93).group(ItemGroup.TOOLS));
