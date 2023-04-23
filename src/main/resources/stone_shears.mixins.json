@@ -4,11 +4,10 @@
   "package": "net.anawesomguy.stone_shears.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ItemPredicateMixin"
   ],
   "client": [],
-  "server": [
-    "LootTableMixin"
-  ],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
   }
