@@ -1,6 +1,6 @@
 package net.anawesomguy.stone_shears;
 
-import com.oroarmor.multiitemlib.api.UniqueItemRegistry;
+import com.oroarmor.multiitemlib.api.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.ShearsItem;
 import net.minecraft.item.Item;
