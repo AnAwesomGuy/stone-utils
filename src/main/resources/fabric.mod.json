@@ -13,8 +13,7 @@
 	},
 	"environment": "*",
 	"entrypoints": {
-		"main": ["net.anawesomguy.stone_shears.StoneShears"],
-		"modmenu": ["net.anawesomguy.stone_shears.ModMenu"]
+		"main": ["net.anawesomguy.stone_shears.StoneShears"]
 	},
   	"mixins": ["stone_shears.mixins.json"],
 	"depends": {
