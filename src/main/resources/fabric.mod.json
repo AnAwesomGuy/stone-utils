@@ -5,7 +5,7 @@
 	"name": "Stone Shears",
 	"description": "Adds a single item; stone shears",
 	"authors": ["AnAwesomGuy"],
-	"licence": "Apache License, Version 2.0",
+	"license": "Apache License, Version 2.0",
 	"icon": "assets/stone_shears/textures/stone_shears.png",
 	"contact": {
 		"issues": "https://github.com/AnAwesomGuy/stone-shears/issues",
