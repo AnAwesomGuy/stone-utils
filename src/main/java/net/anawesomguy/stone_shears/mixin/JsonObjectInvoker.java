@@ -6,6 +6,6 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(JsonObject.class)
 public interface JsonObjectInvoker {
-    @Invoker("deepCopy")
+    @Invoker(value = "deepCopy", remap = false)
     JsonObject invokeDeepCopy();
 }
