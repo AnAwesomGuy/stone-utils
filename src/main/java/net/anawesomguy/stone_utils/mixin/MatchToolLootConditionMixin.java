@@ -1,4 +1,4 @@
-package net.anawesomguy.stone_shears.mixin;
+package net.anawesomguy.stone_utils.mixin;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import static net.anawesomguy.stone_shears.StoneShears.STONE_SHEARS_ITEM_ID;
+import static net.anawesomguy.stone_utils.StoneUtils.STONE_SHEARS_ITEM_ID;
 
 @Mixin(MatchToolLootCondition.class)
 public abstract class MatchToolLootConditionMixin {
