@@ -1,0 +1,11 @@
+{
+  "type": "block",
+  "pools": [{
+    "rolls": 1,
+    "entries": [{
+      "type": "item",
+      "name": "stone_utils:stone_chest"
+    }],
+    "conditions": [{"condition": "survives_explosion"}]
+  }]
+}

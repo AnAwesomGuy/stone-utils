@@ -1,0 +1,18 @@
+{
+  "parent": "recipes/root",
+  "criteria": {
+    "has_clay": {
+      "trigger": "inventory_changed",
+      "conditions": {"items": [{"items": ["clay_ball"]}]}
+    },
+    "has_recipe": {
+      "trigger": "recipe_unlocked",
+      "conditions": {"recipe": "stone_utils:raw_shears_part"}
+    }
+  },
+  "requirements": [[
+    "has_clay",
+    "has_recipe"
+  ]],
+  "rewards": {"recipes": ["stone_utils:raw_shears_part"]}
+}

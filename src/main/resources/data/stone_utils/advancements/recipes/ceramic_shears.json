@@ -1,0 +1,18 @@
+{
+  "parent": "recipes/root",
+  "criteria": {
+    "has_baked_shears_part": {
+      "trigger": "inventory_changed",
+      "conditions": {"items": [{"items": ["stone_utils:baked_shears_part"]}]}
+    },
+    "has_recipe": {
+      "trigger": "recipe_unlocked",
+      "conditions": {"recipe": "stone_utils:ceramic_shears"}
+    }
+  },
+  "requirements": [[
+    "has_baked_shears_part",
+    "has_recipe"
+  ]],
+  "rewards": {"recipes": ["stone_utils:ceramic_shears"]}
+}

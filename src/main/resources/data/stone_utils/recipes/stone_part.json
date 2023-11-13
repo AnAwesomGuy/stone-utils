@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shaped",
+  "pattern": ["AB", "BA"],
+  "key": {
+    "A": {"tag": "stone_crafting_materials"},
+    "B": {"tag": "c:stone_rods"}
+  },
+  "result": {
+    "item": "stone_utils:stone_part",
+    "count": 2
+  }
+}

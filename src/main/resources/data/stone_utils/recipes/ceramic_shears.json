@@ -1,0 +1,6 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [" #", "# "],
+  "key": {"#": {"item": "stone_utils:baked_shears_part"}},
+  "result": {"item": "stone_utils:ceramic_shears"}
+}

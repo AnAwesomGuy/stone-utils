@@ -1,4 +1,7 @@
 {
   "replace": false,
-  "values": ["stone_utils:stone_utils"]
+  "values": [
+    "stone_utils:ceramic_shears",
+    "stone_utils:stone_shears"
+  ]
 }
