@@ -54,6 +54,8 @@ remapSourcesJar {
 	archiveClassifier.set(archiveClassifier.get().concat("-remapped"))
 }
 
+import me.modmuss50.mpp.ReleaseType
+
 publishMods {
 	def version = mod_version.split('\\+')[0]
 	type = release_type.toLowerCase() == 'release' ? STABLE : ReleaseType.of(release_type)
@@ -81,6 +83,10 @@ publishMods {
 		requires {
 			slug = 'fabric-api'
 		}
+
+		requires {
+			slug = 'wsmlmb'
+		}
 	}
 
 	curseforge {
@@ -96,6 +102,10 @@ publishMods {
 
 		requires {
 			slug = 'fabric-api'
+		}
+
+		requires {
+			slug = 'wsmlmb'
 		}
 	}
 
