@@ -1,4 +1,4 @@
 {
   "parent": "item/generated",
-  "textures": {"layer0": "stone_utils:raw_shears_part"}
+  "textures": {"layer0": "stone_utils:item/raw_shears_part"}
 }

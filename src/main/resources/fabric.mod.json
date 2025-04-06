@@ -6,7 +6,7 @@
 	"description": "Adds utilities for living in the stone age. Specifically, stone shears, stone chests, stone crafting tables, and ceramic (clay) shears.",
 	"authors": ["AnAwesomGuy"],
 	"license": "Apache License, Version 2.0",
-	"icon": "assets/stone_utils/textures/stone_shears.png",
+	"icon": "assets/stone_utils/textures/item/stone_shears.png",
 	"contact": {
 		"homepage": "https://modrinth.com/mod/stone-utils/",
 		"issues": "https://github.com/AnAwesomGuy/stone-utils/issues",
@@ -19,7 +19,7 @@
 	"depends": {
 		"fabricloader": ">=0.14.14",
 		"fabric": "*",
-		"wsmlmb": "1",
+		"wsmlmb": "1.x.x",
 		"minecraft": "${range}",
 		"java": ">=17"
 	}

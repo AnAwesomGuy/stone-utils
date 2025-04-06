@@ -38,9 +38,9 @@ public final class StoneUtils implements ModInitializer {
                 .sounds(BlockSoundGroup.STONE)
                 .requiresTool()
         ).setTextures(
-            newID("stone_chest_normal"),
-            newID("stone_chest_left"),
-            newID("stone_chest_right")
+            newID("entity/chest/stone_chest_normal"),
+            newID("entity/chest/stone_chest_left"),
+            newID("entity/chest/stone_chest_right")
         ).build(), "stone_chest"
     );
     public static final Item STONE_CHEST_ITEM = registerBlockItem(STONE_CHEST, "stone_chest");
