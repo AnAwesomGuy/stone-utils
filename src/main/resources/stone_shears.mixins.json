@@ -7,7 +7,6 @@
     "BlockInteractShearsMixin",
     "EntityInteractShearsMixin",
     "JsonArrayInvoker",
-    "JsonObjectInvoker",
     "MatchToolLootConditionMixin",
     "TripwireBlockMixin"
   ],
