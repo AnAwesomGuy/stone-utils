@@ -1,19 +1,21 @@
 {
 	"schemaVersion": 1,
-	"id": "stone_shears",
+	"id": "stone_utils",
 	"version": "${version}",
 	"name": "Stone Shears",
 	"description": "Adds a single item; stone shears",
 	"authors": ["AnAwesomGuy"],
 	"license": "Apache License, Version 2.0",
-	"icon": "assets/stone_shears/textures/stone_shears.png",
+	"icon": "assets/stone_utils/textures/stone_shears.png",
 	"contact": {
-		"issues": "https://github.com/AnAwesomGuy/stone-shears/issues",
-		"sources": "https://github.com/AnAwesomGuy/stone-shears"
+		"issues": "https://github.com/AnAwesomGuy/stone-utils/issues",
+		"sources": "https://github.com/AnAwesomGuy/stone-utils"
 	},
 	"environment": "*",
-	"entrypoints": {"main": ["net.anawesomguy.stone_shears.StoneShears"]},
-  	"mixins": ["stone_shears.mixins.json"],
+	"entrypoints": {"main": [
+		"net.anawesomguy.stone_utils.StoneUtils"
+	]},
+  	"mixins": ["stone_utils.mixins.json"],
 	"depends": {
 		"fabricloader": ">=0.14.14",
 		"fabric": "*",

@@ -1,4 +1,4 @@
-package net.anawesomguy.stone_shears;
+package net.anawesomguy.stone_utils;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.DispenserBlock;
@@ -9,8 +9,8 @@ import net.minecraft.item.ShearsItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class StoneShears implements ModInitializer {
-  public static final String MOD_ID = "stone_shears";
+public class StoneUtils implements ModInitializer {
+  public static final String MOD_ID = "stone_utils";
   public static final Identifier STONE_SHEARS_ITEM_ID = new Identifier(MOD_ID, "stone_shears");
   public static final Item STONE_SHEARS = new ShearsItem(new Item.Settings().maxDamage(93).group(ItemGroup.TOOLS));
   @Override

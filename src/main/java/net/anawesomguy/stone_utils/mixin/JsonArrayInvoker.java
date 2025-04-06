@@ -1,4 +1,4 @@
-package net.anawesomguy.stone_shears.mixin;
+package net.anawesomguy.stone_utils.mixin;
 
 import com.google.gson.JsonArray;
 import org.spongepowered.asm.mixin.Mixin;
