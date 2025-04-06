@@ -21,11 +21,11 @@ import net.minecraft.predicate.item.ItemPredicate;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
 import java.util.HashSet;
 import java.util.Set;
 
 @Mixin(ItemPredicate.class)
+@SuppressWarnings("unused")
 public abstract class ItemPredicateMixin {
     @ModifyVariable(at = @At("HEAD"), method = "<init>(Lnet/minecraft/tag/TagKey;Ljava/util/Set;Lnet/minecraft/predicate/NumberRange$IntRange;Lnet/minecraft/predicate/NumberRange$IntRange;[Lnet/minecraft/predicate/item/EnchantmentPredicate;[Lnet/minecraft/predicate/item/EnchantmentPredicate;Lnet/minecraft/potion/Potion;Lnet/minecraft/predicate/NbtPredicate;)V")
     private static Set<Item> isShears(Set<Item> set) {
