@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "stone_utils:crafting_table_front",
+    "north": "stone_utils:crafting_table_front",
+    "south": "stone_utils:crafting_table_side",
+    "east": "stone_utils:crafting_table_side",
+    "west": "stone_utils:crafting_table_front",
+    "up": "stone_utils:crafting_table_top",
+    "down": "block/cobblestone"
+  }
+}

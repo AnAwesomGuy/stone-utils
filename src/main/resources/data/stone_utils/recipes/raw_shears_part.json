@@ -1,0 +1,6 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [" #", "# "],
+  "key": {"#": {"item": "clay_ball"}},
+  "result": {"item": "stone_utils:raw_shears_part"}
+}

@@ -1,5 +1,6 @@
 plugins {
-	id 'fabric-loom' version '1.1-SNAPSHOT'
+	id 'fabric-loom' version '1.4-SNAPSHOT'
+	id 'me.modmuss50.mod-publish-plugin' version '0.4.2'
 	id 'maven-publish'
 }
 
@@ -11,59 +12,98 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven { url "https://api.modrinth.com/maven" }
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	// Fabric Api
+
+	// Dependencies
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "maven.modrinth:wsmlmb:${project.wsmlmb_version}"
 }
 
 processResources {
+	String version_range = ">=$version_start <=$version_end"
 	inputs.property "version", project.version
+	inputs.property "range", version_range
+
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand "version": project.version, "range": version_range
 	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 17
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
 	withSourcesJar()
+	withJavadocJar()
 }
 
 jar {
 	from("LICENSE") {
-		rename {"${it}_${project.archives_base_name}"}
+		rename {"${it}_${archives_base_name}"}
 	}
 }
 
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
+remapSourcesJar {
+	archiveClassifier.set(archiveClassifier.get().concat("-remapped"))
+}
+
+publishMods {
+	def version = mod_version.split('\\+')[0]
+	type = release_type.toLowerCase() == 'release' ? STABLE : ReleaseType.of(release_type)
+	displayName = "[${version_start}-${version_end}] Stone Utils $version"
+	file = remapJar.archiveFile
+
+	modLoaders.add('fabric')
+	modLoaders.add('quilt')
+
+	changelog = file('changelog.md').text
+	additionalFiles.from(sourcesJar.archiveFile, remapSourcesJar.archiveFile, javadocJar.archiveFile)
+
+	modrinth {
+		projectId = 'NPxAgZu3'
+		accessToken = providers.environmentVariable('$MODRINTH_TOKEN')
+		announcementTitle = "Modrinth Download"
+		displayName = "Stone Utils $version"
+
+		minecraftVersionRange {
+			start = version_start
+			end = version_end
+			includeSnapshots = true
+		}
+
+		requires {
+			slug = 'fabric-api'
 		}
 	}
 
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+	curseforge {
+		projectSlug = 'stone-utils'
+		projectId = '932603'
+		accessToken = providers.environmentVariable('$CURSEFORGE_TOKEN')
+		announcementTitle = "Curseforge Download"
+
+		minecraftVersionRange {
+			start = version_start
+			end = version_end
+		}
+
+		requires {
+			slug = 'fabric-api'
+		}
+	}
+
+	github {
+		accessToken = providers.environmentVariable('$GITHUB_TOKEN')
+		repository = 'AnAwesomGuy/stone-utils'
+		announcementTitle = "Github Download"
+		commitish = github_branch
+		tagName = release_type + '/' + version
 	}
 }

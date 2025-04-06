@@ -1,0 +1,4 @@
+{
+  "parent": "item/generated",
+  "textures": {"layer0": "stone_utils:baked_shears_part"}
+}

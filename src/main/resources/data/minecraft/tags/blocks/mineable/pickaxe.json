@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "stone_utils:stone_chest",
+    "stone_utils:stone_crafting_table"
+  ]
+}

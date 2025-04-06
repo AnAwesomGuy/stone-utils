@@ -1,0 +1,9 @@
+{
+  "type": "crafting_shaped",
+  "pattern": ["BAB", "A A", "BAB"],
+  "key": {
+    "A": {"item": "stone_utils:stone_part"},
+    "B": {"tag": "stone_crafting_materials"}
+  },
+  "result": {"item": "stone_utils:stone_chest"}
+}

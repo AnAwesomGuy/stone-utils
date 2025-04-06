@@ -2,24 +2,25 @@
 	"schemaVersion": 1,
 	"id": "stone_utils",
 	"version": "${version}",
-	"name": "Stone Shears",
+	"name": "Stone Utils",
 	"description": "Adds a single item; stone shears",
 	"authors": ["AnAwesomGuy"],
 	"license": "Apache License, Version 2.0",
 	"icon": "assets/stone_utils/textures/stone_shears.png",
 	"contact": {
+		"homepage": "https://modrinth.com/mod/stone-utils/",
 		"issues": "https://github.com/AnAwesomGuy/stone-utils/issues",
 		"sources": "https://github.com/AnAwesomGuy/stone-utils"
 	},
 	"environment": "*",
-	"entrypoints": {"main": [
-		"net.anawesomguy.stone_utils.StoneUtils"
-	]},
-  	"mixins": ["stone_utils.mixins.json"],
+	"entrypoints": {
+		"main": ["net.anawesomguy.stone_utils.StoneUtils"]
+	},
 	"depends": {
 		"fabricloader": ">=0.14.14",
 		"fabric": "*",
-		"minecraft": ">=1.17 <=1.19.2",
+		"wsmlmb": "1",
+		"minecraft": "${range}",
 		"java": ">=17"
 	}
 }
