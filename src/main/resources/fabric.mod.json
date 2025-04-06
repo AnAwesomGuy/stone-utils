@@ -3,7 +3,7 @@
 	"id": "stone_utils",
 	"version": "${version}",
 	"name": "Stone Utils",
-	"description": "Adds a single item; stone shears",
+	"description": "Adds utilities for living in the stone age. Specifically, stone shears, stone chests, stone crafting tables, and ceramic (clay) shears.",
 	"authors": ["AnAwesomGuy"],
 	"license": "Apache License, Version 2.0",
 	"icon": "assets/stone_utils/textures/stone_shears.png",
