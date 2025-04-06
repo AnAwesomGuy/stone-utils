@@ -6,6 +6,6 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(JsonArray.class)
 public interface JsonArrayInvoker {
-    @Invoker("deepCopy")
+    @Invoker(value = "deepCopy", remap = false)
     JsonArray invokeDeepCopy();
 }
