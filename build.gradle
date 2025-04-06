@@ -1,3 +1,5 @@
+import me.modmuss50.mpp.ReleaseType
+
 plugins {
 	id 'fabric-loom' version '1.4-SNAPSHOT'
 	id 'me.modmuss50.mod-publish-plugin' version '0.4.2'
@@ -54,8 +56,6 @@ remapSourcesJar {
 	archiveClassifier.set(archiveClassifier.get().concat("-remapped"))
 }
 
-import me.modmuss50.mpp.ReleaseType
-
 publishMods {
 	def version = mod_version.split('\\+')[0]
 	type = release_type.toLowerCase() == 'release' ? STABLE : ReleaseType.of(release_type)
@@ -91,7 +91,7 @@ publishMods {
 
 	curseforge {
 		projectSlug = 'stone-utils'
-		projectId = '932603'
+		projectId = '853587'
 		accessToken = providers.environmentVariable('$CURSEFORGE_TOKEN')
 		announcementTitle = "Curseforge Download"
 
